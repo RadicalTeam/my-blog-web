@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {BlogService} from '../../services/blog.service';
 
 @Component({
   selector: 'app-content',
@@ -9,13 +10,19 @@ import {ActivatedRoute} from '@angular/router';
 export class ContentComponent implements OnInit {
 
   private articleId: string;
-  contentHTMl = `<h2>this is the html content from contentHTMl</h2> `;
+  contentHTMl = '';
   constructor(
     private activatedRoute: ActivatedRoute,
+    private blogService: BlogService,
   ) { }
 
   ngOnInit() {
     this.articleId = this.activatedRoute.snapshot.paramMap.get('id');
+    this.blogService.getBlogByTitle('1').subscribe((res) => {
+      if (res !== null) {
+        this.contentHTMl = res.content;
+      }
+    });
   }
 
 }
