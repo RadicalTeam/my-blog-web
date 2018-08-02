@@ -18,7 +18,7 @@ export class ContentComponent implements OnInit {
 
   ngOnInit() {
     this.articleId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.blogService.getBlogByTitle('1').subscribe((res) => {
+    this.blogService.getBlogByTitle(this.articleId).subscribe((res) => {
       if (res !== null) {
         this.contentHTMl = res.content;
       }

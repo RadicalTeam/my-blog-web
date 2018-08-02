@@ -8,13 +8,19 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ContentComponent } from './components/content/content.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ServiceModule} from './services/service.module';
+import { LoginComponent } from './components/login/login.component';
+import { ArticleListComponent } from './components/article-list/article-list.component';
+import { EditorComponent } from './components/editor/editor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ContentComponent
+    ContentComponent,
+    LoginComponent,
+    ArticleListComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,
