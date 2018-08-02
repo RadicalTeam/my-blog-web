@@ -13,7 +13,7 @@ const routes: Routes = [
     path: 'login', component: LoginComponent,
   },
   {
-    path: 'edit', component: EditorComponent,
+    path: 'editor', component: EditorComponent,
   },
   {
     path: 'article/:id', component: ContentComponent,

@@ -11,6 +11,8 @@ import {ServiceModule} from './services/service.module';
 import { LoginComponent } from './components/login/login.component';
 import { ArticleListComponent } from './components/article-list/article-list.component';
 import { EditorComponent } from './components/editor/editor.component';
+import {LMarkdownEditorModule} from 'ngx-markdown-editor';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,11 @@ import { EditorComponent } from './components/editor/editor.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     ServiceModule,
+    LMarkdownEditorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

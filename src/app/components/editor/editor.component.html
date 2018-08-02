@@ -1,3 +1,13 @@
-<p>
-  editor works!
-</p>
+<button (click)="save()">save</button>
+<button (click)="changeMode()">change mode</button>
+<label>标题
+  <input placeholder="title" name="article-title" [(ngModel)]="article.title" />
+</label><br />
+<md-editor
+  name="Content"
+  [(ngModel)]="article.mdSource"
+  [height]="height"
+  [mode]="mode"
+  required
+  maxlength="5000">
+</md-editor>

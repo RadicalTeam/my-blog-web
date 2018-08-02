@@ -1,10 +1,12 @@
 .content-wrapper {
   background-color: #FFFFFF;
-  width: 80%;
+  width: 70%;
   margin: 10px auto;
   border-radius: 5px;
-  box-shadow: 1px 1px 10px 1px;
+  //box-shadow: 1px 1px 10px 1px;
   padding: 10px;
-  display: flex;
-  flex: 1;
+
+  .article-content {
+    margin-top: 30px;
+  }
 }

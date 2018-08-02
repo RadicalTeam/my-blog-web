@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/index';
+import {Article} from '../types/article';
 
 @Injectable({
   providedIn: 'root'
@@ -14,4 +15,7 @@ export class BlogService {
     return this.http.get<string>(address);
   }
 
+  addNewBlog(article: Article) {
+    return this.http.post(`${this.prefixAddress}/add`, article);
+  }
 }
