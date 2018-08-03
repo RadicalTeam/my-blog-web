@@ -19,7 +19,7 @@ const routes: Routes = [
     path: 'article/:id', component: ContentComponent,
   },
   {
-    path: '**', component: ArticleListComponent,
+    path: '**', redirectTo: '',
   }
 ];
 
