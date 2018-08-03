@@ -1,0 +1,24 @@
+.article-list {
+  width: 70%;
+  margin: 0 auto;
+  padding: 10px;
+
+  .article-brief-card {
+    border-bottom: 1px solid #DDD;
+    padding: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .brief-content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .brief-sub-info {
+    position: absolute;
+    bottom: 5px;
+  }
+  .brief-create-time {
+  }
+}

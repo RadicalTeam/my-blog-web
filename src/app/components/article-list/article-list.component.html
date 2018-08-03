@@ -1,3 +1,12 @@
-<p>
-  article-list works!
-</p>
+<app-header></app-header>
+<div class="article-list" *ngFor="let article of articles" (click)="viewArticle(article.id)">
+  <div class="article-brief-card">
+    <h1 class="brief-title">{{article.title}}</h1>
+    <p class="brief-content">
+    {{article.brief}}
+    </p>
+    <div class="brief-sub-info">
+      <span class="brief-create-time">发表日期：{{article.createAt | date:'yyyy/MM/dd'}}</span>
+    </div>
+  </div>
+</div>

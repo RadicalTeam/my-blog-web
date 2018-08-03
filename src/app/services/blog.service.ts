@@ -18,4 +18,8 @@ export class BlogService {
   addNewBlog(article: Article) {
     return this.http.post(`${this.prefixAddress}/add`, article);
   }
+
+  getAllBlogs() {
+    return this.http.get<Article[]>(`${this.prefixAddress}/list`);
+  }
 }
