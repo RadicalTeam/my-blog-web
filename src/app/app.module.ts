@@ -11,8 +11,8 @@ import {ServiceModule} from './services/service.module';
 import { LoginComponent } from './components/login/login.component';
 import { ArticleListComponent } from './components/article-list/article-list.component';
 import { EditorComponent } from './components/editor/editor.component';
-import {LMarkdownEditorModule} from 'ngx-markdown-editor';
 import {FormsModule} from '@angular/forms';
+import { HighLightTransformPipe } from './pipes/high-light-transform.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import {FormsModule} from '@angular/forms';
     ContentComponent,
     LoginComponent,
     ArticleListComponent,
-    EditorComponent
+    EditorComponent,
+    HighLightTransformPipe
   ],
   imports: [
     BrowserModule,
@@ -30,7 +31,6 @@ import {FormsModule} from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     ServiceModule,
-    LMarkdownEditorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

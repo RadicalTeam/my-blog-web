@@ -1,14 +1,18 @@
-<button (click)="save()">save</button>
-<button (click)="changeMode()">change mode</button>
-<label>标题
-  <input placeholder="title" name="article-title" [(ngModel)]="article.title" />
-</label><br />
-<md-editor
-  name="Content"
-  [(ngModel)]="article.mdSource"
-  [height]="height"
-  [mode]="mode"
-  required
-  [options]="options"
-  maxlength="5000">
-</md-editor>
+<div class="editor-header">
+  <label>标题
+    <input placeholder="title" name="article-title" [(ngModel)]="article.title" />
+  </label>
+</div>
+
+<div class="editor-tool-bar">
+  <button (click)="save()" class="editor-save">save</button>
+  <button class="editor-save">publish</button>
+  <button (click)="changeMode()" class="editor-change-mode">change mode</button>
+</div>
+
+<div class="editor-container" id="editor_container">
+  <div *ngIf="mode=='editor'" class="editor-text-area" id="editor" contenteditable="true" (keyup)="getContent($event)">
+  </div>
+  <div class="preview-container" [innerHTML]="content | highLightTransform">
+  </div>
+</div>

@@ -12,13 +12,10 @@ export class EditorComponent implements OnInit {
 
   article: Article = new Article();
   mode = 'editor';
-  height = window.screen.availHeight - 20 + 'px';
-  options = {
-    hideIcons: ['TogglePreview'],
-  };
-  constructor(
-    private blogService: BlogService,
-  ) { }
+  content = '';
+
+  constructor(private blogService: BlogService, ) {
+  }
 
   ngOnInit() {
   }
@@ -37,4 +34,7 @@ export class EditorComponent implements OnInit {
     this.mode = this.mode === 'editor' ? 'preview' : 'editor';
   }
 
+  getContent() {
+    this.content = document.getElementById('editor').innerText;
+  }
 }

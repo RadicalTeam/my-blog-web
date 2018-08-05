@@ -1,0 +1,38 @@
+.editor-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-tool-bar {
+  border: 1px solid;
+  height: 40px;
+  line-height: 40px;
+
+
+  button {
+    margin-left: 10px;
+    border-radius: 2px;
+    padding: 1px 5px
+  }
+}
+.editor-container {
+  height: 700px;
+  display: flex;
+  flex-direction: row;
+  .editor-text-area {
+    border: 1px solid #ddddc4;
+    flex: 1;
+    padding: 10px 20px;
+  }
+
+  .preview-container {
+    flex: 1;
+    border: 1px solid #a5ddda;
+    padding: 10px 20px;
+  }
+
+  img {
+    display: block;
+    width: 300px;
+  }
+}
