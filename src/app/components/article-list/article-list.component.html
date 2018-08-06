@@ -1,4 +1,9 @@
 <app-header></app-header>
+<div class="content-side-list">
+  <h2>文集列表</h2>
+  <ul>
+  </ul>
+</div>
 <div class="article-list" *ngFor="let article of articles" (click)="viewArticle(article.id)">
   <div class="article-brief-card">
     <h1 class="brief-title">{{article.title}}</h1>

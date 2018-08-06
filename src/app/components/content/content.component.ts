@@ -10,7 +10,7 @@ import {BlogService} from '../../services/blog.service';
 export class ContentComponent implements OnInit {
 
   private articleId: string;
-  contentHTMl = '';
+  contentHTML = '';
   constructor(
     private activatedRoute: ActivatedRoute,
     private blogService: BlogService,
@@ -20,7 +20,7 @@ export class ContentComponent implements OnInit {
     this.articleId = this.activatedRoute.snapshot.paramMap.get('id');
     this.blogService.getBlogByTitle(this.articleId).subscribe((res) => {
       if (res !== null) {
-        this.contentHTMl = res.content;
+        this.contentHTML = res.content;
       }
     });
   }

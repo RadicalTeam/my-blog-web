@@ -21,10 +21,11 @@ export class EditorComponent implements OnInit {
   }
 
   save() {
-    const nodeDOM = document.body.getElementsByClassName('preview-panel');
-    const parentNode: HTMLElement = nodeDOM[0].parentElement;
-    this.article.content = parentNode.innerHTML;
-    this.article.brief = parentNode.innerText.substring(0, BRIEF_MAX_LENGTH);
+    const previewDOM = document.body.querySelector('#preview');
+    const editorDom = document.body.querySelector('#editor');
+    this.article.brief = previewDOM.innerText.substring(0, BRIEF_MAX_LENGTH);
+    this.article.mdSource = editorDom.innerText;
+
     this.blogService.addNewBlog(this.article).subscribe((res) => {
       console.log('succeed');
     });
@@ -36,5 +37,15 @@ export class EditorComponent implements OnInit {
 
   getContent() {
     this.content = document.getElementById('editor').innerText;
+  }
+
+  publishBlog() {
+    const previewDOM = document.body.querySelector('#preview');
+    const editorDom = document.body.querySelector('#editor');
+    this.article.brief = previewDOM.innerText.substring(0, BRIEF_MAX_LENGTH);
+    this.article.mdSource = editorDom.innerText;
+    this.blogService.publishBlog(this.article).subscribe((res) => {
+      console.log('succeed');
+    });
   }
 }

@@ -6,13 +6,12 @@
 
 <div class="editor-tool-bar">
   <button (click)="save()" class="editor-save">save</button>
-  <button class="editor-save">publish</button>
-  <button (click)="changeMode()" class="editor-change-mode">change mode</button>
+  <button class="editor-save" (click)="publishBlog()">publish</button>
 </div>
 
 <div class="editor-container" id="editor_container">
   <div *ngIf="mode=='editor'" class="editor-text-area" id="editor" contenteditable="true" (keyup)="getContent($event)">
   </div>
-  <div class="preview-container" [innerHTML]="content | highLightTransform">
+  <div class="preview-container" [innerHTML]="content | highLightTransform" id="preview">
   </div>
 </div>

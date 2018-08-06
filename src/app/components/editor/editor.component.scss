@@ -23,12 +23,14 @@
     border: 1px solid #ddddc4;
     flex: 1;
     padding: 10px 20px;
+    overflow-y: scroll;
   }
 
   .preview-container {
     flex: 1;
     border: 1px solid #a5ddda;
     padding: 10px 20px;
+    overflow-y: scroll;
   }
 
   img {

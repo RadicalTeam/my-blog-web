@@ -16,9 +16,12 @@ export class BlogService {
   }
 
   addNewBlog(article: Article) {
-    return this.http.post(`${this.prefixAddress}/add`, article);
+    return this.http.post(`${this.prefixAddress}/save`, article);
   }
 
+  publishBlog(article: Article) {
+    return this.http.post(`${this.prefixAddress}/publish`, article);
+  }
   getAllBlogs() {
     return this.http.get<Article[]>(`${this.prefixAddress}/list`);
   }
