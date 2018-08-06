@@ -10,8 +10,9 @@
 </div>
 
 <div class="editor-container" id="editor_container">
-  <div *ngIf="mode=='editor'" class="editor-text-area" id="editor" contenteditable="true" (keyup)="getContent($event)">
+  <div *ngIf="mode=='editor'" class="editor-text-area" id="editor" contenteditable="true"
+       (keyup)="getContent($event)" #editor>
   </div>
-  <div class="preview-container" [innerHTML]="content | highLightTransform" id="preview">
+  <div class="preview-container" [innerHTML]="content | highLightTransform" id="preview" #preview>
   </div>
 </div>
